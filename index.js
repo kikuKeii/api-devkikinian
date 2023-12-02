@@ -19,20 +19,20 @@ app.get("/", async (req, res) => {
       message: "Hello World!",
       author: data,
     };
-    res.json(result, 200);
+    res.status(200).json(result);
   } catch (error) {
     console.log(error);
     const result = {
       method: "GET",
-      status: 200,
+      status: 500, // Set an appropriate status code for internal server error
       message: "Hello World!",
       author: "failed fetching data",
     };
-    res.json(result, 200);
+    res.status(500).json(result);
   }
 });
 
-if (process.env.NODE_ENV == "development") {
+if (process.env.NODE_ENV === "development") {
   app.listen(port, () =>
     console.log(`App listening on port http://localhost:${port}!`)
   );
