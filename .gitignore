@@ -1,0 +1,8 @@
+.yarn
+node_modules
+.env
+.env-test
+.env-production
+.vercel
+package-lock.json
+yarn.lock
